@@ -26,4 +26,4 @@ async def generate(ctx, message):
     await ctx.reply(formatted_text + '...')      
 
 
-bot.run('YOUR PREFIX HERE')
+bot.run('YOUR TOKEN HERE')
