@@ -1,6 +1,12 @@
 import gpt_2_simple as gpt2
 import discord
 from discord.ext import commands
+import json
+
+with open('config.json') as config_file:
+    data = json.load(config_file)
+
+token = data['token']
 
 sess = gpt2.start_tf_sess()
 print('Downloading trained GPT-2 model...')
@@ -26,4 +32,4 @@ async def generate(ctx, message):
     await ctx.reply(formatted_text + '...')      
 
 
-bot.run('YOUR PREFIX HERE')
+bot.run(token)
